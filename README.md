@@ -3,7 +3,7 @@
 O **MindBreak** é um cronômetro baseado na técnica Pomodoro, criado para ajudar você a manter o foco e lembrar de fazer pausas estratégicas durante o trabalho ou estudo.  
 A cada intervalo concluído, o site exibe frases motivacionais para relaxar a mente e recarregar as energias.  
 
-![MindBreak Screenshot]([/mindbreak.png](https://github.com/Arvicxz/Projeto-MindBreak/blob/master/mindbreak.png))
+![MindBreak Screenshot](https://github.com/Arvicxz/Projeto-MindBreak/blob/master/mindbreak.png)
 
 ---
 
