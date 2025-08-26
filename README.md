@@ -25,6 +25,7 @@ A cada intervalo concluído, o site exibe frases motivacionais para relaxar a me
 
 ## 📂 Estrutura do Projeto
 mindbreak/
+├── audio-mindbreak.mp3 # Audio
 ├── index.html # Estrutura do site
 ├── style.css # Estilização
 ├── script.js # Lógica do cronômetro
