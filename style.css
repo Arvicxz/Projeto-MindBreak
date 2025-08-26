@@ -17,6 +17,14 @@ body {
     transition: background .5s ease-in-out;
 }
 
+main {
+    background-color: transparent;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .1);
+    padding: 50px;
+    height: 30rem;
+}
+
 .container {
     text-align: center;
     padding: 20px;
@@ -75,4 +83,39 @@ h1 {
     margin-top: 20px;
     font-style: italic;
     font-size: 1.1rem;
+}
+
+.volume-control {
+    display: flex;
+    position: relative;
+    margin-top: 12px;
+}
+
+.volume-control .icon-volume {
+    display: flex;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.volume-control .icon-volume svg {
+    width: 20px;
+    height: 20px;
+    transition: transform .2s ease-in-out;
+}
+
+.volume-control .icon-volume:hover svg {
+    transform: scale(1.1);
+}
+
+.volume-control input[type="range"] {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: width .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.volume-control.active input[type="range"] {
+    width: 150px;
+    opacity: 1;
+    pointer-events: auto;
 }

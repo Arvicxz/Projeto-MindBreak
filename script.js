@@ -9,6 +9,16 @@ const resetBtn = document.getElementById('reset');
 const quoteDisplay = document.getElementById('quote');
 const alarm = document.getElementById('alarm');
 
+const volumeControl = document.querySelector('.volume-control');
+const iconVolume = volumeControl.querySelector('.icon-volume');
+const volumeSlider = document.getElementById('volume');
+
+volumeSlider.addEventListener('input', () => {
+    alarm.volume = volumeSlider.value;
+});
+
+alarm.volume = volumeSlider.value;
+
 const quotes = [
     "Respire fundo, você está indo bem!",
     "Cada pausa é um passo para mais foco.",
@@ -41,6 +51,12 @@ function startTimer() {
     }
 }
 
+function tryToplayAlarm() {
+    alarm.play() .catch(error => {
+        console.log("Áudio não pôde ser reproduzido automaticamente:", error);
+    });
+}
+
 function pauseTimer () {
     clearInterval(timer);
     isRunning = false;
@@ -52,6 +68,8 @@ function resetTimer () {
     isRunning = false;
     updateDisplay();
     quoteDisplay.textContent ="Pronto para começar?";
+    alarm.pause();
+    alarm.currentTime = 0;
 }
 
 function showRandomQuote() {
@@ -59,8 +77,15 @@ function showRandomQuote() {
     quoteDisplay.textContent = quotes[randomIndex];
 }
 
-startBtn.addEventListener('click', startTimer);
+startBtn.addEventListener('click', () => {
+    tryToplayAlarm();
+    startTimer();
+});
 pauseBtn.addEventListener('click', pauseTimer);
 resetBtn.addEventListener('click', resetTimer);
+
+iconVolume.addEventListener('click', () => {
+    volumeControl.classList.toggle('active');
+});
 
 updateDisplay();
